@@ -24,6 +24,6 @@ database.once('connected', () => {
     console.log('Database Connected');
 })
 
-app.listen(5005, () => {
+app.listen(process.env.PORT || 5005, () => {
     console.log('Server running at ${5005}')
 })
