@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const mongoString = process.env.DATABASE_URI;
 
+const PORT = process.env.PORT || 5005;
 mongoose.connect(mongoString, { useNewUrlParser: true });
 const database = mongoose.connection;
 
@@ -24,6 +25,6 @@ database.once('connected', () => {
     console.log('Database Connected');
 })
 
-app.listen(process.env.PORT || 5005, () => {
+app.listen(PORT, () => {
     console.log('Server running at ${5005}')
 })
